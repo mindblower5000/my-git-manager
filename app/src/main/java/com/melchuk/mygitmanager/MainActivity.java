@@ -13,6 +13,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+
+//По поводу общего дз для проекта курса. На данный момент нужно создать проект с:
+//        1. Импорты Мокси и rx
+//        2. Три Вью - навигационная активити, фрагмент для списка репошек и фрагмент для деталей пользователя.
+//        3. Разметки для все трёх
+//        4. Интерфейсы вьюшек для работы презентеров
+//        5. Презентеры которые пока ничего не делают
+//        6. На экране списка репошек добавить возможность поиска, слушать через rx
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 

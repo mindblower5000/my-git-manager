@@ -1,4 +1,4 @@
-package com.melchuk.mygitmanager;
+package com.melchuk.mygitmanager.view.repos;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -10,10 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.melchuk.mygitmanager.dummy.DummyContent;
-import com.melchuk.mygitmanager.dummy.DummyContent.DummyItem;
-
-import java.util.List;
+import com.melchuk.mygitmanager.R;
+import com.melchuk.mygitmanager.data.ReposDataModel;
+import com.melchuk.mygitmanager.data.ReposDataModel.Repository;
 
 /**
  * A fragment representing a list of Items.
@@ -69,7 +68,7 @@ public class ReposItemFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyRepositoryRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            recyclerView.setAdapter(new ReposItemFragmentRecyclerViewAdapter(ReposDataModel.ITEMS, mListener));
         }
         return view;
     }
@@ -104,6 +103,6 @@ public class ReposItemFragment extends Fragment {
      */
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(DummyItem item);
+        void onListFragmentInteraction(Repository item);
     }
 }

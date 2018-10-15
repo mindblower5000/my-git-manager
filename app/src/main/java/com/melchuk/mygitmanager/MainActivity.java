@@ -17,7 +17,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.melchuk.mygitmanager.dummy.DummyContent;
+import com.melchuk.mygitmanager.data.ReposDataModel;
+import com.melchuk.mygitmanager.view.repos.ReposItemFragment;
+import com.melchuk.mygitmanager.view.user.UserDataFragment;
 
 
 //По поводу общего дз для проекта курса. На данный момент нужно создать проект с:
@@ -131,7 +133,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public void onListFragmentInteraction(DummyContent.DummyItem item) {
+    public void onListFragmentInteraction(ReposDataModel.Repository item) {
 
     }
 }

@@ -3,6 +3,11 @@
   <component name="WizardSettings">
     <option name="children">
       <map>
+        <entry key="imageWizard">
+          <value>
+            <PersistentState />
+          </value>
+        </entry>
         <entry key="vectorWizard">
           <value>
             <PersistentState>
@@ -28,8 +33,9 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_folder_black_24dp" />
-                            <entry key="sourceFile" value="C:\Users\amelt_000" />
+                            <entry key="assetSourceType" value="FILE" />
+                            <entry key="outputName" value="ic_github_logo" />
+                            <entry key="sourceFile" value="M:\93_GEEKBRAINS\05_ANDROID\02_ANDROID_3\github-logo.svg" />
                           </map>
                         </option>
                       </PersistentState>

@@ -11,8 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.melchuk.mygitmanager.R;
+import com.melchuk.mygitmanager.data.model.RepositoryModel;
 import com.melchuk.mygitmanager.data.ReposDataModel;
-import com.melchuk.mygitmanager.data.ReposDataModel.Repository;
 
 /**
  * A fragment representing a list of Items.
@@ -20,7 +20,7 @@ import com.melchuk.mygitmanager.data.ReposDataModel.Repository;
  * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
  * interface.
  */
-public class ReposItemFragment extends Fragment {
+public class ReposItemFragment extends Fragment  {
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
@@ -102,7 +102,7 @@ public class ReposItemFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnListFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onListFragmentInteraction(Repository item);
+        void onListFragmentInteraction(RepositoryModel item);
     }
+
 }

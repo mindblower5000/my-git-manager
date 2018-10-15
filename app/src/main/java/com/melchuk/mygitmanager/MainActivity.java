@@ -12,12 +12,12 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
 
+import com.arellomobile.mvp.MvpAppCompatActivity;
 import com.melchuk.mygitmanager.data.model.RepositoryModel;
 import com.melchuk.mygitmanager.view.repos.ReposItemFragment;
 import com.melchuk.mygitmanager.view.user.UserDataFragmentView;
@@ -34,7 +34,7 @@ import butterknife.ButterKnife;
 //        5. Презентеры которые пока ничего не делают
 //        6. На экране списка репошек добавить возможность поиска, слушать через rx
 
-public class MainActivity extends AppCompatActivity
+public class MainActivity extends MvpAppCompatActivity
 implements NavigationView.OnNavigationItemSelectedListener, UserDataFragmentView.OnUserDataFragmentInteractionListener, ReposItemFragment.OnListFragmentInteractionListener {
 
     @BindView(R.id.toolbar)

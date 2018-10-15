@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +16,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import butterknife.BindView;
-
+import butterknife.ButterKnife;
 
 import com.arellomobile.mvp.MvpAppCompatFragment;
 import com.arellomobile.mvp.presenter.InjectPresenter;
@@ -34,6 +35,8 @@ import com.melchuk.mygitmanager.presenter.UserAccountPresenterToViewInterface;
  */
 public class UserDataFragmentView extends MvpAppCompatFragment implements UserAccountPresenterToViewInterface {
 
+    @InjectPresenter
+    UserAccountPresenter userAccountPresenter;
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -48,8 +51,7 @@ public class UserDataFragmentView extends MvpAppCompatFragment implements UserAc
     @BindView(R.id.link_signup)     TextView _signupLink;
 
 
-    @InjectPresenter
-    UserAccountPresenter userAccountPresenter;
+
 
 
     public UserDataFragmentView() {
@@ -88,7 +90,9 @@ public class UserDataFragmentView extends MvpAppCompatFragment implements UserAc
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_user_data, container, false);
+        View  view = inflater.inflate(R.layout.fragment_user_data, container, false);
+        ButterKnife.bind(this, view);
+        return view;
     }
 
     @Override
@@ -98,15 +102,19 @@ public class UserDataFragmentView extends MvpAppCompatFragment implements UserAc
 
         //userAccountPresenter.isLoggedIn();
 
-        userAccountPresenter = new UserAccountPresenter();
+        //userAccountPresenter = new UserAccountPresenter();
 
-       _loginButton.setOnClickListener(v -> userAccountPresenter.buttonLoginCheck(_emailText.getText().toString().trim(), _passwordText.getText().toString().trim()));
+        if(_loginButton!=null )
+            _loginButton.setOnClickListener(v -> userAccountPresenter.buttonLoginCheck(_emailText.getText().toString().trim(), _passwordText.getText().toString().trim()));
+        else Log.d("My_TAG","no button _loginButton!!!!!!!!!!!!!!!!!!!!");
 
-//        _signupLink.setOnClickListener(v -> {
-//            // Start the Signup activity
-//            //Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
-//            //startActivityForResult(intent, REQUEST_SIGNUP);
-//        });
+        if(_signupLink!=null )
+            _signupLink.setOnClickListener(v -> {
+            // Start the Signup activity
+            //Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
+            //startActivityForResult(intent, REQUEST_SIGNUP);
+         });
+        else Log.d("My_TAG","no button _signupLink!!!!!!!!!!!!!!!!!!!!");
 
     }
 
